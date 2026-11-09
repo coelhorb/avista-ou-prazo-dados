@@ -9,7 +9,7 @@ import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "docs" / "rates.json"
-QUOTE_URL = "https://brapi.dev/api/quote/AUPO11"
+QUOTE_URL = "https://brapi.dev/api/v2/stocks/quote?symbols=AUPO11"
 
 
 def previous_quote():
@@ -25,7 +25,7 @@ def fetch_quote(token):
         headers={"Authorization": f"Bearer {token}", "User-Agent": "avista-ou-prazo-dados"},
     )
     with urllib.request.urlopen(request, timeout=30) as response:
-        result = json.load(response)["results"][0]
+        result = json.load(response)["results"][0]["data"]
     return {
         "price": f"{float(result['regularMarketPrice']):.2f}",
         "as_of": str(result["regularMarketTime"])[:10],
