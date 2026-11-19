@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-18T03:41:23Z",
+  "generated_at": "2026-11-19T03:20:29Z",
   "mercado_pago": {
     "pct_cdi": "105",
     "teto_brl": "20000",
     "condicao": "Entrada mensal mínima de R$ 1.000 ou assinatura Meli+"
   },
   "aupo11": {
-    "price": "112.12",
+    "price": "112.10",
     "as_of": "2026-11-18"
   }
 }
